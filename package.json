@@ -1,0 +1,20 @@
+{
+  "name": "klasifikasi-masker-api",
+  "version": "1.0.0",
+  "description": "API untuk klasifikasi masker",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
+  "author": "Fajar Nazmi Fadillah",
+  "license": "MIT",
+  "dependencies": {
+    "concurrently": "^6.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.13.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
