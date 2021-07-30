@@ -1,4 +1,0 @@
-{
-  "mongoURI": "mongodb+srv://dbAdmin:C3IR85YDZPC8xDPC@cluster0.9fe0w.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
-  "jwtSecret": "kmskr_TAFajarNF"
-}
