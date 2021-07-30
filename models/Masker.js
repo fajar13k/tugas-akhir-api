@@ -1,5 +1,4 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+import { Schema, model } from 'mongoose';
 
 // Buat skema
 const MaskerSchema = new Schema({
@@ -17,4 +16,6 @@ const MaskerSchema = new Schema({
   }
 });
 
-module.exports = Masker = mongoose.model('masker', MaskerSchema);
+const Masker = model('masker', MaskerSchema);
+
+export default Masker;
