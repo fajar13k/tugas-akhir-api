@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "server": "nodemon server.js --exec babel-node --presets babel-preset-env"
+    "server": "nodemon server.js --exec babel-node --presets babel-preset-env",
+    "heroku-postbuild": "nodemon server.js --exec babel-node --presets babel-preset-env"
   },
   "author": "Fajar Nazmi Fadillah",
   "license": "MIT",
