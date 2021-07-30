@@ -8,7 +8,7 @@ const Masker = require('../../models/Masker');
 // @route   GET api/masker
 // @desc    Get All Items
 // @access  Public
-router.get('/', (req, res) => {
+router.get('/', auth, (req, res) => {
   Masker.find()
     .sort({ date: -1 })
     .then((masker) => res.json(masker))
