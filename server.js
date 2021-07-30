@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const config = require('config');
+const cors = require('cors');
+const config = require('./config');
 
 // API Routes
 const maskerRoutes = require('./routes/api/masker');
@@ -9,6 +10,8 @@ const authRoutes = require('./routes/api/auth');
 
 const app = express();
 
+// CORS Middleware
+app.use(cors());
 // BodyParoser Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
