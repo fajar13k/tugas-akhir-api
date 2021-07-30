@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
+const config = require('config');
 
 // Masker Model
 const User = require('../../models/User');
