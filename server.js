@@ -2,8 +2,10 @@ const express = require('express');
 const mongoose = require('mongoose');
 const config = require('config');
 
+// API Routes
 const maskerRoutes = require('./routes/api/masker');
 const usersRoutes = require('./routes/api/users');
+const authRoutes = require('./routes/api/auth');
 
 const app = express();
 
@@ -26,6 +28,7 @@ mongoose
 // Use Routes
 app.use('/api/masker', maskerRoutes);
 app.use('/api/users', usersRoutes);
+app.use('/api/auth', authRoutes);
 
 const port = process.env.PORT || 5000;
 
