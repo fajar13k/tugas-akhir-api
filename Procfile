@@ -1,0 +1,1 @@
+web: nodemon server.js --exec babel-node --presets babel-preset-env
