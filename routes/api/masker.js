@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const auth = require('../../middleware/auth');
 
 // Masker Model
 const Masker = require('../../models/Masker');
@@ -16,7 +17,7 @@ router.get('/', (req, res) => {
 // @route   POST api/masker
 // @desc    Post an Item
 // @access  Public
-router.post('/', (req, res) => {
+router.post('/', auth, (req, res) => {
   const newItem = new Masker({
     description: req.body.description,
     accuracy: req.body.accuracy
