@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
 
 // @route   POST api/masker
 // @desc    Post an Item
-// @access  Public
+// @access  Private
 router.post('/', auth, (req, res) => {
   const newItem = new Masker({
     description: req.body.description,
