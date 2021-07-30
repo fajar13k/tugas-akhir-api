@@ -1,4 +1,4 @@
 {
-  "mongoURI": "mongodb://127.0.0.1:27017/klasifikasi-masker",
+  "mongoURI": "mongodb+srv://dbAdmin:C3IR85YDZPC8xDPC@cluster0.9fe0w.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
   "jwtSecret": "kmskr_TAFajarNF"
 }
