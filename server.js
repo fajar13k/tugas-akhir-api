@@ -1,7 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 
-const masker = require('./routes/api/masker');
+const maskerRoutes = require('./routes/api/masker');
+const usersRoutes = require('./routes/api/users');
 
 const app = express();
 
@@ -22,7 +23,8 @@ mongoose
   .catch((err) => console.log(err));
 
 // Use Routes
-app.use('/api/masker', masker);
+app.use('/api/masker', maskerRoutes);
+app.use('/api/users', usersRoutes);
 
 const port = process.env.PORT || 5000;
 
