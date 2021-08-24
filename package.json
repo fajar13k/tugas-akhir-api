@@ -4,9 +4,11 @@
   "description": "API untuk klasifikasi masker",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "server": "nodemon server.js --exec babel-node --presets babel-preset-env",
-    "heroku-postbuild": "node server.js --exec babel-node --presets babel-preset-env"
+    "clean": "rm -rf build && mkdir build",
+    "build-babel": "babel -d ./build ./ -s",
+    "build": "npm run clean && npm run build-babel",
+    "start": "npm run build && node ./build/server.js",
+    "server": "nodemon server.js --exec babel-node --presets babel-preset-env"
   },
   "author": "Fajar Nazmi Fadillah",
   "license": "MIT",
@@ -17,6 +19,7 @@
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "express-rate-limit": "^5.3.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.13.4"
   },

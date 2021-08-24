@@ -2,6 +2,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import config from './config';
+// import rateLimit from 'express-rate-limit';
 
 // API Routes
 import authRoutes from './routes/api/auth';
@@ -17,6 +18,14 @@ app.use(cors());
 // BodyParoser Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+// app.use(
+//   rateLimit({
+//     windowMs: 1000, // Limit 1 detik untuk setiap request
+//     max: 1,
+//     message: 'Telah mencapai batas request, coba sebentar lagi!',
+//     headers: true,
+//   })
+// );
 
 // DB Config
 const db = `${MONGO_URI}/${MONGO_DB_NAME}`;

@@ -36,6 +36,7 @@ router.post('/login', async (req, res) => {
     if (!token) throw Error('Couldnt sign the token');
 
     res.status(200).json({
+      status: "success",
       token,
       user: {
         id: user._id,
@@ -44,7 +45,10 @@ router.post('/login', async (req, res) => {
       }
     });
   } catch (e) {
-    res.status(400).json({ msg: e.message });
+    res.status(400).json({
+      status: "error",
+      msg: e.message,
+    });
   }
 });
 
@@ -59,7 +63,10 @@ router.post('/register', async (req, res) => {
 
   // Simple validation
   if (!name || !username || !password) {
-    return res.status(400).json({ msg: 'Please enter all fields' });
+    return res.status(400).json({
+      status: "error",
+      msg: 'Please enter all fields'
+    });
   }
 
   try {
@@ -94,7 +101,10 @@ router.post('/register', async (req, res) => {
       }
     });
   } catch (e) {
-    res.status(400).json({ error: e.message });
+    res.status(400).json({
+      status: "error",
+      msg: e.message,
+    });
   }
 });
 
@@ -110,7 +120,10 @@ router.get('/user', auth, async (req, res) => {
     if (!user) throw Error('User does not exist');
     res.json(user);
   } catch (e) {
-    res.status(400).json({ msg: e.message });
+    res.status(400).json({
+      status: "error",
+      msg: e.message,
+    });
   }
 });
 
