@@ -23,7 +23,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const logout = async () => {
-    await Cookies.remove('mask-classification');
+    await Cookies.remove('heavyrotation');
 
     unauthenticateAPI();
     setUser(null);

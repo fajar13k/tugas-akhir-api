@@ -1,5 +1,5 @@
-import dayjs from 'dayjs';
-import { useState } from 'react';
+import dayjs from "dayjs";
+import { useState } from "react";
 import {
   Card,
   Dropdown,
@@ -10,7 +10,7 @@ import {
   PaginationItem,
   PaginationLink,
   Table,
-} from 'reactstrap';
+} from "reactstrap";
 
 const TableDashboard = ({
   title,
@@ -50,8 +50,9 @@ const TableDashboard = ({
             data?.map((dt) => (
               <tr>
                 <td>{dt.description}</td>
-                <td>{`${Math.round((dt.accuracy + Number.EPSILON) * 100) / 100
-                  }%`}</td>
+                <td>{`${
+                  Math.round((dt.accuracy + Number.EPSILON) * 100) / 100
+                }%`}</td>
                 <td>{dayjs(dt.date).format("DD-MM-YYYY HH:mm:ss")}</td>
               </tr>
             ))

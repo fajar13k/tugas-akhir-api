@@ -8,7 +8,7 @@ const CardDashboard = ({ title, className, titleClassName, countClassName, count
         <CardText
           className={
             `card-count text-end fw-bold${countClassName ? ` ${countClassName}` : ''}`
-          }>
+        }>
           {count}
         </CardText>
       </CardBody>

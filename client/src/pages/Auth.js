@@ -23,7 +23,7 @@ const Auth = ({ origin = 'signin', onChangeSection, setRestrict }) => {
     }
 
     setLoading(true);
-
+    
     return await api.post(`auth/${path}`, params)
       .then((res) => {
         Cookies.set('heavyrotation', res.data.token);
@@ -64,7 +64,7 @@ const Auth = ({ origin = 'signin', onChangeSection, setRestrict }) => {
         {hasError && (<Alert color="danger">{errorMessage}</Alert>)}
 
         <Form className="w-100">
-          {origin === 'signup' && (
+          {origin === 'signup' && ( 
             <FormGroup>
               <Label for="name">Name</Label>
               <Input type="text" name="name" id="name" value={name} onChange={(e) => setName(e.target.value)} />
@@ -75,12 +75,12 @@ const Auth = ({ origin = 'signin', onChangeSection, setRestrict }) => {
             <Label for="username">Username</Label>
             <Input type="text" name="username" id="username" value={username} onChange={(e) => setUsername(e.target.value)} />
           </FormGroup>
-
+  
           <FormGroup className="mt-3">
             <Label for="password">Password</Label>
             <Input type="password" name="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
           </FormGroup>
-
+  
           <div className="d-flex flex-column">
             <Button
               block
@@ -89,18 +89,18 @@ const Auth = ({ origin = 'signin', onChangeSection, setRestrict }) => {
               disabled={isLoading}
               onClick={onSubmit}
               type="submit">
-              <div className="d-flex justify-content-center">
-                {renderText()}
-              </div>
+                <div className="d-flex justify-content-center">
+                  {renderText()}
+                </div>
             </Button>
-
+            
             <span
               className="text-center mt-3 text-info fw-bold"
               onClick={
                 () => onChangeSection(origin === 'signin' ? 'signup' : 'signin')
               }
               disabled={isLoading}>
-              {origin === 'signin' ? 'Sign Up' : 'Sign In'}
+                {origin === 'signin' ? 'Sign Up' : 'Sign In'}
             </span>
           </div>
         </Form>
