@@ -1,0 +1,37 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+// function
+@function px2rem($px){
+  @if unitless($px) {
+    @return 1rem*($px/16);
+  } @else {
+    @return 1rem*($px/16px);
+  }
+}
+
+@function rem2px($rem){
+  @if unitless($rem) {
+    @return 16px*($rem);
+  } @else {
+    @return 16px*($rem/1rem);
+  }
+}
+
+// style
+.App {
+  text-align: center;
+}
+
+.header {
+  padding: 10px 10%;
+}
+
+.container {
+  padding: 10px 10%;
+}
+
+.card-dashboard {
+  .card-count {
+    font-size: px2rem(56);
+  }
+}
